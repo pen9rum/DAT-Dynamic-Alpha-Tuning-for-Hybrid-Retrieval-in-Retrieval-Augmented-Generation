@@ -1,0 +1,7 @@
+base: ../hotpotqa.yaml
+m3:
+  m2_config: configs/hotpotqa.yaml
+  split:
+    mode: official
+    train: {from: train, max: 2000}
+    val: {from: dev, max: 600}

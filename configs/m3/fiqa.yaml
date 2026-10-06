@@ -1,0 +1,7 @@
+base: ../fiqa.yaml
+m3:
+  m2_config: configs/fiqa.yaml
+  split:
+    mode: official
+    train: {from: train, max: 3000}
+    val: {from: dev, max: 500}

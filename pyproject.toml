@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sedat"
+version = "0.1.0"
+description = "Self-evolving DAT: headroom analysis and self-improving policies for sparse/dense hybrid retrieval"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "pyarrow",
+    "pyyaml",
+    "matplotlib",
+    "scikit-learn",
+    "tqdm",
+    "requests",
+    "sentence-transformers",
+    "openai",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+zh = ["jieba"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]

@@ -1,0 +1,11 @@
+base: beir_base.yaml
+name: musique
+dataset:
+  loader: local_pyserini
+  source: musique
+  processed_dir: data/processed/musique
+  n_questions: {2hop: 350, 3hop1: 60, 3hop2: 40, 4hop1: 60, 4hop2: 20, 4hop3: 20}   # stratified, answerable dev
+retrieval:
+  sparse_index: data/processed/musique/lucene
+  dense_index: data/processed/musique/faiss
+  passage_max_seq_length: 256

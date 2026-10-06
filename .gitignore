@@ -1,0 +1,72 @@
+# Allow-list: the public repo contains only the Frontier-DAT method and its example pipeline.
+# Everything else in this working directory (exploratory experiments, results, caches, data, tools,
+# third-party code, .env) stays local.
+/*
+!/.gitignore
+!/README.md
+!/pyproject.toml
+!/.env.example
+!/src/
+!/experiments/
+!/tests/
+!/configs/
+!/examples/
+!/runs/
+
+__pycache__/
+*.pyc
+.env
+
+# src: library minus exploratory modules
+/src/sedat/analysis/
+/src/sedat/multihop/
+/src/sedat/m3/learn.py
+/src/sedat/m3b/memory.py
+/src/sedat/m3b/prompts.py
+/src/sedat/m3b/runner.py
+/src/sedat/m3c/exact_pipeline.py
+/src/sedat/m3c/trust_bandit.py
+
+# experiments: pipeline entry points only
+/experiments/*
+!/experiments/__init__.py
+!/experiments/build_local_index.py
+!/experiments/cache_retrieval.py
+!/experiments/m3_build_cache.py
+!/experiments/m3c_exact_frontier.py
+!/experiments/m3c_topk_geometry.py
+!/experiments/m3c_topk_slate.py
+!/experiments/final_eval.py
+!/experiments/final_report.py
+!/experiments/final_tables.py
+
+# tests: frontier correctness tests
+/tests/*
+!/tests/test_exact_frontier.py
+!/tests/test_topk_frontier.py
+
+# configs: the four evaluation datasets
+/configs/*
+!/configs/base.yaml
+!/configs/beir_base.yaml
+!/configs/nq.yaml
+!/configs/fiqa.yaml
+!/configs/hotpotqa.yaml
+!/configs/musique.yaml
+!/configs/m3/
+/configs/m3/*
+!/configs/m3/nq.yaml
+!/configs/m3/fiqa.yaml
+!/configs/m3/hotpotqa.yaml
+!/configs/m3/musique.yaml
+
+# runs: only the frozen split assignments needed to reproduce the pipeline
+/runs/*
+!/runs/milestone3/
+/runs/milestone3/*
+!/runs/milestone3/splits/
+/runs/milestone3/splits/*
+!/runs/milestone3/splits/nq.csv
+!/runs/milestone3/splits/fiqa.csv
+!/runs/milestone3/splits/hotpotqa.csv
+!/runs/milestone3/splits/musique.csv

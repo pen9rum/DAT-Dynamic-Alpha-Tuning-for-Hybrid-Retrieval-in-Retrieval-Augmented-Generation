@@ -1,0 +1,6 @@
+base: ../nq.yaml
+m3:
+  m2_config: configs/nq.yaml
+  split:
+    mode: deterministic
+    fractions: {train: 0.5, val: 0.2, test: 0.3}

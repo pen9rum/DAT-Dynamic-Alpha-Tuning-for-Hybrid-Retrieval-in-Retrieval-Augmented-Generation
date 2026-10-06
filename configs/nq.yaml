@@ -1,0 +1,9 @@
+base: beir_base.yaml
+name: nq
+dataset:
+  loader: beir_pyserini
+  beir_name: nq
+  max_queries: null
+retrieval:
+  sparse_index: beir-v1.0.0-nq.flat
+  dense_index: beir-v1.0.0-nq.bge-base-en-v1.5
